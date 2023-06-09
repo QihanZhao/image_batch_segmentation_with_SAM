@@ -1,4 +1,8 @@
 # image_batch_segmentation_with_SAM.py
+
+## Author
+Qihan Zhao
+
 ## Description
 This script batch segments pictures in <source> directory using SAM（Segment Anything）.
 And save the semantic pictures in <source_semantic> for colored versions, and <source_semanticB> for binary versions
