@@ -4,7 +4,7 @@
 Qihan Zhao
 
 ## Description
-This script batch segments pictures in <source> directory using SAM（Segment Anything）.
+This script batch segments pictures in <source> directory using SAM（[Segment Anything](https://github.com/facebookresearch/segment-anything)）.
 And save the semantic pictures in <source_semantic> for colored versions, and <source_semanticB> for binary versions
 
 ## Uasge
