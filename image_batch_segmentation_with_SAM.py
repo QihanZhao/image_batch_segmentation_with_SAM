@@ -26,7 +26,7 @@ mask_generator = SamAutomaticMaskGenerator(sam)
 
 
 import os
-sourcedir = 'LOL_high'
+sourcedir = './LOL_test_low'
 for i, filename in enumerate(os.listdir(sourcedir)):
     if filename.endswith('.jpg') or filename.endswith('.png'):
         print(f'{i}th pic: {filename}')
@@ -43,12 +43,15 @@ for i, filename in enumerate(os.listdir(sourcedir)):
         img[:,:,3] = 0
             
             # Binary
+        os.makedirs(f'{sourcedir}_semanticB', exist_ok=True)
         for i, mask in enumerate(masks):
             save_path = os.path.join(f'{sourcedir}_semanticB', f'{os.path.splitext(filename)[0]}_semanticB_{i}.png')
             cv2.imwrite(save_path, np.uint8(mask["segmentation"]) * 255)
             
             #Color
+        os.makedirs(f'{sourcedir}_semantic', exist_ok=True)
         save_path = os.path.join(f'{sourcedir}_semantic', f'{os.path.splitext(filename)[0]}_semantic.png')
+        print(save_path)
         for i, mask in enumerate(masks):
             mask_bool = mask['segmentation']
             color_mask = np.concatenate([np.random.random(3), [0.35]])
